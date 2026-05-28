@@ -1,43 +1,12 @@
 import { useState } from 'react';
 import { Mail, MapPin, Phone, Check } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
 
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setResult("");
-    
-    try {
-      const formData = new FormData(e.target);
-      formData.append("access_key", "31da4ded-c6d5-488a-af1c-a91f902805c8");
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitted(true);
-        setFormState({ name: '', email: '', message: '' });
-        e.target.reset();
-      } else {
-        setResult(data.message || "Error submitting form.");
-      }
-    } catch (error) {
-      setResult("Something went wrong. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '', message: '' });
+  const [state, handleSubmit] = useForm("mnjrwdgv");
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-[var(--color-surface-raised)] border-t border-[var(--color-border)]">
@@ -76,7 +45,7 @@ export default function Contact() {
           {/* Right: Contact Form */}
           <ScrollRevealWrapper delay={0.2}>
             <div className="bg-[var(--color-surface)] rounded-3xl p-6 md:p-10 border border-[var(--color-border)] shadow-[var(--shadow-card)]">
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="text-center py-12">
                   <Check className="w-12 h-12 text-[var(--color-accent)] mx-auto mb-4" />
                   <p className="text-xl text-[var(--color-text-primary)] font-bold" style={{ fontFamily: 'var(--font-display)' }}>Message Sent!</p>
@@ -85,44 +54,73 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input 
-                      type="text" 
-                      name="name"
-                      placeholder="Your Name" 
-                      required 
-                      value={formState.name} 
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })} 
-                      className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all" 
-                    />
-                    <input 
-                      type="email" 
-                      name="email"
-                      placeholder="Your Email" 
-                      required 
-                      value={formState.email} 
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })} 
-                      className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all" 
-                    />
+                    <div>
+                      <input 
+                        type="text" 
+                        name="name"
+                        placeholder="Your Name" 
+                        required 
+                        value={formState.name} 
+                        onChange={(e) => setFormState({ ...formState, name: e.target.value })} 
+                        className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all" 
+                      />
+                      <div className="text-red-500 text-xs mt-1">
+                        <ValidationError prefix="Name" field="name" errors={state.errors} />
+                      </div>
+                    </div>
+                    <div>
+                      <input 
+                        type="email" 
+                        name="email"
+                        placeholder="Your Email" 
+                        required 
+                        value={formState.email} 
+                        onChange={(e) => setFormState({ ...formState, email: e.target.value })} 
+                        className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all" 
+                      />
+                      <div className="text-red-500 text-xs mt-1">
+                        <ValidationError prefix="Email" field="email" errors={state.errors} />
+                      </div>
+                    </div>
                   </div>
-                  <textarea 
-                    name="message"
-                    placeholder="Let's Have Talk about SEO" 
-                    rows={5} 
-                    required 
-                    value={formState.message} 
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })} 
-                    className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 resize-none transition-all" 
-                  />
+                  <div>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      placeholder="Your Contact Number" 
+                      required 
+                      value={formState.phone} 
+                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })} 
+                      className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all" 
+                    />
+                    <div className="text-red-500 text-xs mt-1">
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+                    </div>
+                  </div>
+                  <div>
+                    <textarea 
+                      name="message"
+                      placeholder="Let's Have Talk about SEO" 
+                      rows={5} 
+                      required 
+                      value={formState.message} 
+                      onChange={(e) => setFormState({ ...formState, message: e.target.value })} 
+                      className="w-full px-4 py-3.5 rounded-xl text-sm bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 resize-none transition-all" 
+                    />
+                    <div className="text-red-500 text-xs mt-1">
+                      <ValidationError prefix="Message" field="message" errors={state.errors} />
+                    </div>
+                  </div>
                   <button 
                     type="submit" 
-                    disabled={submitting} 
+                    disabled={state.submitting} 
                     className="w-full px-6 py-4 rounded-xl text-sm font-bold bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] transition-all duration-200 disabled:opacity-50 shadow-[var(--shadow-button)] hover:-translate-y-0.5 mt-2"
                   >
-                    {submitting ? 'Sending...' : 'Start a Conversation →'}
+                    {state.submitting ? 'Sending...' : 'Start a Conversation →'}
                   </button>
-                  {result && (
+                  {state.errors && state.errors.length > 0 && (
                     <div className="text-center mt-2 text-sm text-red-500 font-medium">
-                      {result}
+                      Something went wrong. Please check the fields above.
                     </div>
                   )}
                 </form>
