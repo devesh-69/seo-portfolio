@@ -4,7 +4,7 @@
 
 **SEO Executive · Mumbai, India**
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-portfolio.examtarikh.in-16A34A?style=for-the-badge)](https://portfolio.examtarikh.in)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-portfolio.deveshtatkare.com-16A34A?style=for-the-badge)](https://portfolio.deveshtatkare.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Devesh_Tatkare-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/deveshtatkare)
 
 ![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -232,7 +232,7 @@ src/
 
 [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/deveshtatkare)
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-16A34A?style=flat-square)](https://portfolio.examtarikh.in)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-16A34A?style=flat-square)](https://portfolio.deveshtatkare.com)
 
 _Built with React · Ranked with intention._
 
