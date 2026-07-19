@@ -168,8 +168,8 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="/resume.pdf"
-                download="Devesh_Tatkare_SEO_Executive_Resume_2026.pdf"
+                href="/Devesh_Tatkare_SEO_Executive_Resume.pdf"
+                download="Devesh_Tatkare_SEO_Executive_Resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
                            text-sm font-bold cursor-pointer
                            bg-[var(--color-surface)] text-[var(--color-text-primary)]
@@ -184,15 +184,14 @@ export default function Hero() {
           </div>
 
           {/* RIGHT COLUMN: Visuals (Chart + Floating Chips) */}
-          <div className="col-span-1 lg:col-span-6 relative mt-12 lg:mt-0 h-[400px] md:h-[500px]">
+          <div className="col-span-1 lg:col-span-6 relative mt-8 lg:mt-0 lg:h-[500px] flex items-center justify-center">
             
             {/* Main Chart Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[480px]
-                         bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-6 md:p-8 z-10"
+              className="w-full max-w-[480px] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-6 md:p-8 z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
               style={{ boxShadow: 'var(--shadow-card-hover)' }}
             >
               <div className="flex items-start justify-between mb-6">

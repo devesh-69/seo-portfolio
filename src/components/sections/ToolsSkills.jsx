@@ -4,7 +4,7 @@ import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
 
 export default function ToolsSkills() {
   return (
-    <section id="tools-skills" className="py-20 md:py-28 bg-[var(--color-bg)] border-t border-b border-[var(--color-border)]">
+    <section id="tools-skills" className="py-12 md:py-28 bg-[var(--color-bg)] border-t border-b border-[var(--color-border)]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         <ScrollRevealWrapper>
           <div className="mb-12">

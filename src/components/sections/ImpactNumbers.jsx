@@ -45,33 +45,33 @@ function AnimatedNumber({ value, suffix = '', duration = 1800 }) {
 }
 
 const METRICS = [
-  { 
-    icon: TrendingUp, 
-    value: 78, 
-    suffix: '%', 
+  {
+    icon: TrendingUp,
+    value: 78,
+    suffix: '%',
     label: 'Organic traffic share',
-    subLabel: 'ISMT Business School\n(51% → 78%)' 
+    subLabel: 'ISMT Business School\n(51% → 78%)'
   },
-  { 
-    icon: TrendingUp, 
-    value: 71, 
-    suffix: '%', 
+  {
+    icon: TrendingUp,
+    value: 71,
+    suffix: '%',
     label: 'Organic traffic share',
-    subLabel: 'CareerManagers\n(42% → 71%)' 
+    subLabel: 'CareerManagers\n(42% → 71%)'
   },
-  { 
-    icon: Clock, 
-    value: '3–5 Days', 
-    suffix: '', 
-    label: 'Average Google indexing',
-    subLabel: 'time for new pages' 
+  {
+    icon: Clock,
+    value: '1-3 hrs',
+    suffix: '',
+    label: 'Avg Google indexing',
+    subLabel: 'for new pages'
   },
-  { 
-    icon: Star, 
-    value: 20, 
-    suffix: '+', 
+  {
+    icon: Star,
+    value: 20,
+    suffix: '+',
     label: 'Page 1 rankings',
-    subLabel: 'across 3 websites' 
+    subLabel: 'across 3 websites'
   },
 ];
 
@@ -87,7 +87,13 @@ export default function ImpactNumbers() {
                   <div className="w-10 h-10 rounded-full border border-[var(--color-accent)]/30 flex items-center justify-center bg-[var(--color-accent-light)]">
                     <metric.icon className="w-5 h-5 text-[var(--color-accent)]" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
+                  <div
+                    className={`${typeof metric.value === 'string' && metric.value.length > 8
+                        ? 'text-xl sm:text-2xl lg:text-3xl'
+                        : 'text-4xl md:text-5xl'
+                      } font-bold text-[var(--color-text-primary)]`}
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
                     <AnimatedNumber value={metric.value} suffix={metric.suffix} />
                   </div>
                 </div>
@@ -97,12 +103,12 @@ export default function ImpactNumbers() {
                 <div className="text-xs text-[var(--color-text-tertiary)] whitespace-pre-line leading-relaxed">
                   {metric.subLabel}
                 </div>
-                
+
                 {/* Divider for desktop */}
                 {i !== METRICS.length - 1 && (
                   <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-2/3 bg-[var(--color-border)]" />
                 )}
-                
+
                 {/* Divider for mobile */}
                 {i !== METRICS.length - 1 && (
                   <div className="block md:hidden w-1/2 h-px bg-[var(--color-border)] mx-auto mt-8" />

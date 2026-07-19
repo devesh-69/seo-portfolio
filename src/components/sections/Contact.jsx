@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Check } from 'lucide-react';
+import { Mail, MapPin, Phone, Check, Globe } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
 
@@ -9,7 +9,7 @@ export default function Contact() {
   const [state, handleSubmit] = useForm("mnjrwdgv");
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[var(--color-surface-raised)] border-t border-[var(--color-border)]">
+    <section id="contact" className="py-12 md:py-28 bg-[var(--color-surface-raised)] border-t border-[var(--color-border)]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           
@@ -38,6 +38,10 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-[var(--color-accent)]" />
                   <span className="text-sm font-medium text-[var(--color-text-primary)]">Mumbai, India</span>
                 </div>
+                <a href="https://deveshtatkare.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                  <Globe className="w-5 h-5 text-[var(--color-accent)]" />
+                  <span className="text-sm font-medium text-[var(--color-text-primary)]">deveshtatkare.com</span>
+                </a>
               </div>
             </div>
           </ScrollRevealWrapper>

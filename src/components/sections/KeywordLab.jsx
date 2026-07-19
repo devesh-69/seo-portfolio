@@ -49,7 +49,7 @@ export default function KeywordLab({ activeSiteFilter = 'All Sites', onFilterCha
   };
 
   return (
-    <section id="keyword-lab" className="py-20 md:py-28 bg-[var(--color-bg)]">
+    <section id="keyword-lab" className="py-12 md:py-28 bg-[var(--color-bg)]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Header */}
         <ScrollRevealWrapper>

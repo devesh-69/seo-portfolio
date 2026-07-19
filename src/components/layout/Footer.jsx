@@ -1,4 +1,4 @@
-import { Mail, ExternalLink } from 'lucide-react';
+import { Mail, ExternalLink, Globe } from 'lucide-react';
 
 /* Inline LinkedIn SVG since lucide-react doesn't include brand icons */
 const LinkedInIcon = ({ className }) => (
@@ -59,6 +59,18 @@ export default function Footer() {
               aria-label="ExamTarikh"
             >
               <ExternalLink className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://deveshtatkare.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-xl hover:bg-[var(--color-surface-raised)]
+                         text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]
+                         transition-colors duration-200"
+              aria-label="Personal Website"
+            >
+              <Globe className="w-5 h-5" />
             </a>
           </div>
 

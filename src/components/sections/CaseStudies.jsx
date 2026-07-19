@@ -13,7 +13,7 @@ export default function CaseStudies({ onViewKeywords }) {
   };
 
   return (
-    <section id="case-studies" className="py-20 md:py-28 bg-[var(--color-muted)]">
+    <section id="case-studies" className="py-12 md:py-28 bg-[var(--color-muted)]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         
         {/* Header */}

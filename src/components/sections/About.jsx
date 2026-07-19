@@ -1,7 +1,7 @@
 import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
 import {
   Search, BarChart2, Globe, TrendingUp,
-  Key, Activity, Palette
+  Key, Activity, Palette, MessageSquare, ImageIcon
 } from 'lucide-react';
 
 /**
@@ -18,6 +18,8 @@ const TOOL_ICONS = {
   'Google Keyword Planner': Key,
   'Google Trends': Activity,
   'Canva': Palette,
+  'Claude': MessageSquare,
+  'ChatGPT Images': ImageIcon,
 };
 
 const TOOLS = [
@@ -28,11 +30,13 @@ const TOOLS = [
   'Google Keyword Planner',
   'Google Trends',
   'Canva',
+  'Claude',
+  'ChatGPT Images',
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28">
+    <section id="about" className="py-12 md:py-28">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         <ScrollRevealWrapper>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest
@@ -91,7 +95,7 @@ export default function About() {
                 >
                   My Toolkit
                 </h3>
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   {TOOLS.map((tool) => {
                     const Icon = TOOL_ICONS[tool] || Globe;
                     return (
