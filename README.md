@@ -174,65 +174,13 @@ All 26 keywords below are live. The portfolio has a "Verify on Google" button fo
 
 ---
 
-## 🛠 Tech Stack
-
-| Layer           | Choice                                  | Why                           |
-| --------------- | --------------------------------------- | ----------------------------- |
-| Framework       | React 19 + Vite 8                       | Fast dev, optimal bundle      |
-| Package Manager | Bun                                     | Faster installs than npm/yarn |
-| Styling         | Tailwind CSS v4 + CSS custom properties | Design tokens, true dark mode |
-| Animation       | Framer Motion                           | Scroll-triggered, performant  |
-| Scroll          | react-scroll                            | Smooth section navigation     |
-| Icons           | Lucide React                            | Clean, consistent             |
-
----
-
-## 🚀 Local Setup
-
-```bash
-# Clone
-git clone https://github.com/devesh-69/seo-portfolio.git
-cd seo-portfolio
-
-# Install with Bun
-bun install
-
-# Start dev server
-bun run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173)
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── layout/           # Navbar, Footer, DarkModeToggle
-│   ├── sections/         # Hero, ImpactNumbers, About, KeywordLab,
-│   │                     # CaseStudies, ToolsSkills, Contact
-│   └── ui/               # RankBadge, MetricCounter, SkillPill,
-│                         # KeywordCard, SiteCard, ScrollRevealWrapper
-├── data/
-│   ├── keywords.js       # 26 ranked keywords with position + URLs
-│   ├── caseStudies.js    # 3 case studies with before/after data
-│   └── skills.js         # 14 SEO skills + 7 tools
-├── hooks/
-│   └── useDarkMode.js    # localStorage persistent dark mode
-└── index.css             # Tailwind v4 @theme + full design system
-```
-
----
-
 <div align="center">
 
 **Devesh Tatkare** · SEO Executive · Mumbai, India
 
 [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/deveshtatkare)
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-16A34A?style=flat-square)](https://portfolio.deveshtatkare.com)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-16A34A?style=flat-square)](https://deveshtatkare.com)
 
 _Built with React · Ranked with intention._
 
