@@ -4,7 +4,7 @@
 
 **SEO Executive · Mumbai, India**
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-portfolio.deveshtatkare.com-16A34A?style=for-the-badge)](https://portfolio.deveshtatkare.com)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-deveshtatkare.com-16A34A?style=for-the-badge)](https://deveshtatkare.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Devesh_Tatkare-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/deveshtatkare)
 
 ![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
